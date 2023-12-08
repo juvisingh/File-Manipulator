@@ -16,10 +16,13 @@ def edit_text_file(file_path, new_content):
 
 # #Folder Manipulation
 # #Task 4
-# def makeFolder(director, parent_dir):
-#     os.makedirs(os.path.join(parent_dir, director))
-#     print("Successfully Created.")
-# makeFolder("Files", "C:/Users/jsingh619/Documents/GitHub/File-Manipulator/")
+def makeFolder(director, parent_dir):
+    if os.path.exists(f"{parent_dir}{director}"):
+        print("Folder already exists.")
+    else:
+        os.makedirs(os.path.join(parent_dir, director))
+        print("Successfully Created.")
+makeFolder("Files", "C:/Users/jsingh619/Documents/GitHub/File-Manipulator/")
 # #Task 5
 # shutil.move('sample.txt', 'C:/Users/jsingh619/Documents/GitHub/File-Manipulator/Files')
 
